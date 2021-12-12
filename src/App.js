@@ -1,31 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import Routing from './routes';
 
 function App() {
   return (
-    <div className="topo">
-      <h1> Troca talentos </h1>
-
-      <div className="quad">
-        <h2> Acesse o seu login! </h2>
-        <form className="box-email">
-          
-        </form>
-
-        <form className="box-password">
-          
-        </form>
-        
-        <a>
-          <p> Esqueceu a senha? </p>
-        </a>
-
-        <button className="acess">
-          Acessar
-        </button>
-
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routing />
+    </BrowserRouter>
   );
 }
 
