@@ -1,13 +1,25 @@
 import './login.css';
 import { Link } from 'react-router-dom';
-import {useState} from 'react'
+import {useState} from 'react';
+import api from '../../service/api';
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const headers = {
+        'Content-Type': 'application/json',
+      }
+      
     function enviarCredenciais(form) {
         form.preventDefault();
+        const data = {
+            login: email,
+            password: password,
+        }
+        console.log(data)
+        api.post("login", data, {headers: headers}).then((response ) => {
+            console.log(response);
+        }).catch((err) => console.log(err))
     }
 
     return (
